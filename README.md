@@ -109,6 +109,7 @@ This project is open source and available for learning purposes.
 
 
 ## Screenshots
+<img width="1920" height="1020" alt="Screenshot 2025-11-25 140424" src="https://github.com/user-attachments/assets/f65bbd51-85e0-4e47-b965-bab5a7fbf744" />
 
 ### API Health Check Response
 ```json
