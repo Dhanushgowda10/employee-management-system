@@ -9,14 +9,16 @@ This document shows the actual API responses from the Employee Management System
 ### Health Check API Response
 
 
-> **Drag and drop your Health Check screenshot here (Win+Shift+S to capture)**
+> <img width="1920" height="1020" alt="Screenshot 2025-11-25 141330" src="https://github.com/user-attachments/assets/593c02f2-61ba-4a0d-ad37-f3d7709d85d7" />
+
 
 
 
 > **Browser URL:** `http://localhost:5000/api/health`
 
 
-> **Drag and drop your Get Employees screenshot here**
+> <img width="1920" height="1020" alt="Screenshot 2025-11-25 140424" src="https://github.com/user-attachments/assets/53ea3ad0-5bd6-46b1-b8a0-c3bdb23b9ef4" />
+
 
 
 ### Get All Employees Response  
