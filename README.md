@@ -106,3 +106,57 @@ Dhanush S M
 ## License
 
 This project is open source and available for learning purposes.
+
+
+## Screenshots
+
+### API Health Check Response
+```json
+{"message":"API is running","success":true,"timestamp":"2025-11-25T08:28:26.596446"}
+```
+
+### Get All Employees Response
+```json
+{
+  "data": [
+    {
+      "id": 1,
+      "first_name": "Dhanush",
+      "last_name": "SM",
+      "email": "dhanush@example.com",
+      "department": "DevOps",
+      "is_active": true
+    },
+    {
+      "id": 2,
+      "first_name": "Ramesh",
+      "last_name": "K",
+      "email": "ramesh@yahoo.com",
+      "department": "Quality",
+      "is_active": true
+    }
+  ],
+  "pagination": {"page": 1, "pages": 1, "per_page": 10, "total": 2},
+  "success": true
+}
+```
+
+### Docker Container Running
+```
+$ docker run -d -p 5000:5000 --name emp-api employee-management-system
+$ docker logs emp-api
+
+2025-11-25 08:11:53 - INFO - Database initialized
+ * Serving Flask app 'app'
+ * Running on http://0.0.0.0:5000
+```
+
+### Docker Build Success
+```
+$ docker build -t employee-management-system .
+[+] Building 60.8s (15/15) FINISHED
+ => naming to docker.io/library/employee-management-system:latest
+```
+
+---
+**All API endpoints tested and working successfully!**
