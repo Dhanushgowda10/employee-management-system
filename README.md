@@ -161,3 +161,58 @@ $ docker build -t employee-management-system .
 
 ---
 **All API endpoints tested and working successfully!**
+
+
+## CI/CD Pipeline & Azure Deployment
+
+This project includes a GitHub Actions workflow for automated CI/CD to Azure App Service.
+
+### Pipeline Features
+
+- **Automated Testing**: Runs pytest on every push/PR
+- **Code Coverage**: Generates coverage reports
+- **Docker Build**: Builds and validates Docker image
+- **Azure Deployment**: Automatic deployment to Azure App Service on main branch
+
+### Pipeline Workflow
+
+```
+push to main → Run Tests → Build Docker → Deploy to Azure
+```
+
+### Setup Azure Deployment
+
+1. **Create Azure Web App**:
+   ```bash
+   az webapp create --name employee-management-api --resource-group myResourceGroup --plan myAppServicePlan --runtime "PYTHON:3.11"
+   ```
+
+2. **Create Service Principal**:
+   ```bash
+   az ad sp create-for-rbac --name "github-actions" --role contributor --scopes /subscriptions/{subscription-id}/resourceGroups/{resource-group} --sdk-auth
+   ```
+
+3. **Add GitHub Secret**:
+   - Go to Repository → Settings → Secrets → Actions
+   - Add `AZURE_CREDENTIALS` with the JSON output from step 2
+
+4. **Trigger Deployment**:
+   - Push to `main` branch to trigger automatic deployment
+   - Or manually trigger from Actions tab
+
+### Environment Variables
+
+| Variable | Description |
+|----------|-------------|
+| `AZURE_WEBAPP_NAME` | Your Azure Web App name |
+| `AZURE_CREDENTIALS` | Service principal credentials (secret) |
+
+---
+
+## Author
+
+Dhanush S M
+
+## License
+
+This project is open source and available for learning purposes.
