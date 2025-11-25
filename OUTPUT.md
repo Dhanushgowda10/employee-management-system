@@ -1,12 +1,34 @@
 # API Output Examples
 
 This document shows the actual API responses from the Employee Management System running in Docker.
-##screenshot of Output
-![Uploading Screenshot 2025-11-25 140424.png…]()
 
-## Docker Container Running
+---
 
-```
+## Screenshots
+
+### Health Check API Response
+
+
+> **Drag and drop your Health Check screenshot here (Win+Shift+S to capture)**
+
+
+
+> **Browser URL:** `http://localhost:5000/api/health`
+
+
+> **Drag and drop your Get Employees screenshot here**
+
+
+### Get All Employees Response  
+![Employees List](https://github.com/user-attachments/assets/employees-placeholder)
+
+> **Browser URL:** `http://localhost:5000/api/employees`
+
+---
+
+## 1. Docker Container Running
+
+```bash
 $ docker run -d -p 5000:5000 --name emp-api employee-management-system
 
 $ docker logs emp-api
@@ -19,10 +41,10 @@ $ docker logs emp-api
 
 ---
 
-## 1. Health Check Endpoint
+## 2. Health Check Endpoint
 
 **Request:**
-```bash
+```
 GET http://localhost:5000/api/health
 ```
 
@@ -37,10 +59,10 @@ GET http://localhost:5000/api/health
 
 ---
 
-## 2. Create Employee
+## 3. Create Employee
 
 **Request:**
-```bash
+```
 POST http://localhost:5000/api/employees
 Content-Type: application/json
 
@@ -52,7 +74,7 @@ Content-Type: application/json
 }
 ```
 
-**Response:**
+**Response (201 Created):**
 ```json
 {
   "success": true,
@@ -71,10 +93,10 @@ Content-Type: application/json
 
 ---
 
-## 3. Get All Employees
+## 4. Get All Employees
 
 **Request:**
-```bash
+```
 GET http://localhost:5000/api/employees
 ```
 
@@ -89,8 +111,7 @@ GET http://localhost:5000/api/employees
       "last_name": "SM",
       "email": "dhanush@example.com",
       "department": "DevOps",
-      "is_active": true,
-      "created_at": "2025-11-25T08:14:37.193475"
+      "is_active": true
     },
     {
       "id": 2,
@@ -98,8 +119,7 @@ GET http://localhost:5000/api/employees
       "last_name": "K",
       "email": "ramesh@yahoo.com",
       "department": "Quality",
-      "is_active": true,
-      "created_at": "2025-11-25T08:20:28.344591"
+      "is_active": true
     }
   ],
   "pagination": {
@@ -113,10 +133,10 @@ GET http://localhost:5000/api/employees
 
 ---
 
-## 4. Get Single Employee
+## 5. Get Single Employee
 
 **Request:**
-```bash
+```
 GET http://localhost:5000/api/employees/1
 ```
 
@@ -137,10 +157,10 @@ GET http://localhost:5000/api/employees/1
 
 ---
 
-## 5. Update Employee
+## 6. Update Employee
 
 **Request:**
-```bash
+```
 PUT http://localhost:5000/api/employees/1
 Content-Type: application/json
 
@@ -166,10 +186,10 @@ Content-Type: application/json
 
 ---
 
-## 6. Delete Employee
+## 7. Delete Employee
 
 **Request:**
-```bash
+```
 DELETE http://localhost:5000/api/employees/2
 ```
 
@@ -185,8 +205,9 @@ DELETE http://localhost:5000/api/employees/2
 
 ## Docker Build Output
 
-```
+```bash
 $ docker build -t employee-management-system .
+
 [+] Building 60.8s (15/15) FINISHED
  => [internal] load build definition from Dockerfile
  => [builder 1/5] FROM docker.io/library/python:3.11-slim
@@ -200,10 +221,14 @@ $ docker build -t employee-management-system .
 
 ## Tech Stack Verified
 
-- Python 3.11
-- Flask 3.0.0
-- SQLAlchemy 2.0.23
-- Docker (Multi-stage build)
-- SQLite Database
+| Component | Version |
+|-----------|--------|
+| Python | 3.11 |
+| Flask | 3.0.0 |
+| SQLAlchemy | 2.0.23 |
+| Docker | Multi-stage build |
+| Database | SQLite |
 
-**Status: All endpoints working successfully!**
+---
+
+**Status: All API endpoints tested and working successfully!**
