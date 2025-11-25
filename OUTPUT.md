@@ -1,6 +1,8 @@
 # API Output Examples
 
 This document shows the actual API responses from the Employee Management System running in Docker.
+##screenshot of Output
+![Uploading Screenshot 2025-11-25 140424.png…]()
 
 ## Docker Container Running
 
